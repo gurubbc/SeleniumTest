@@ -32,7 +32,7 @@ WebDriver driver;
 	public void openGoogle()
 	{
 		// Will be called before every test case
-		driver.get("http://localhost:8082/LoginApplication1/Login.html");
+		driver.get("https://www.google.com");
 	}
 	
 	@AfterSuite
@@ -51,12 +51,12 @@ WebDriver driver;
 			System.out.println("Driver not null in selenium");
 		else
 			System.out.println("Driver is null in selenium");
-		List<WebElement> elements=driver.findElements(By.name("uname"));
-		System.out.println("The number of element with name uname is "+elements.size());
+		List<WebElement> elements=driver.findElements(By.name("q"));
+		System.out.println("The number of element with name q is "+elements.size());
 		if (elements.size()>0)
-			System.out.println("Yes, this page has USERNAME field to type the username");
+			System.out.println("Yes, the google main page has search box");
 		else
-			System.out.println("No, this page doesn't have USERNAME field...");
+			System.out.println("No, the developer has forgotten to include the search field");
 		Assert.assertTrue(elements.size()>0);
 		
 	}
